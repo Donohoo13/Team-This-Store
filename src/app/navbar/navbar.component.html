@@ -1,3 +1,13 @@
-<p>
-  navbar works!
-</p>
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo">
+    <mdb-navbar-brand>
+        <a class="navbar-brand" href="#">Navbar</a>
+    </mdb-navbar-brand>
+    <links>
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active waves-light" routerLink="/" mdbWavesEffect>Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link waves-light" routerLink="/registerUser" mdbWavesEffect>Register</a>
+            <a class="nav-item nav-link waves-light" href="#" mdbWavesEffect>Pricing</a>
+            <a class="nav-item nav-link disabled" href="#">Disabled</a>
+        </div>
+    </links>
+</mdb-navbar>
