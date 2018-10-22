@@ -1,15 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import {User} from '../models/users'
 
 @Component({
-  selector: 'app-register-user',
+  selector: 'app-user-form',
   templateUrl: './register-user.component.html',
   styleUrls: ['./register-user.component.scss']
 })
-export class RegisterUserComponent implements OnInit {
+export class RegisterUserComponent {
 
-  constructor() { }
+  model = new User("","","","","","",null)
+  
+  submitted = false;
 
-  ngOnInit() {
+  onSubmit(){ this.submitted = true;}
+  
+  newShow(){
+    this.model = new User('','','','','','',0)
   }
-
 }
