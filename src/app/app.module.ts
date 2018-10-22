@@ -9,7 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterUserComponent } from './register-user/register-user.component';
-import { RegisterFormComponent } from './register-form/register-form.component';
+import { AddShowComponent } from './add-show/add-show.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { RegisterFormComponent } from './register-form/register-form.component';
     FooterComponent,
     HomeComponent,
     RegisterUserComponent,
-    RegisterFormComponent,
+    AddShowComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,6 +27,7 @@ import { RegisterFormComponent } from './register-form/register-form.component';
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'registerUser', component: RegisterUserComponent },
+      { path: 'addShow', component: AddShowComponent },
     ])
   ],
   providers: [],

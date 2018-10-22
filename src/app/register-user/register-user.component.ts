@@ -14,7 +14,7 @@ export class RegisterUserComponent {
 
   onSubmit(){ this.submitted = true;}
   
-  newShow(){
+  newUser(){
     this.model = new User('','','','','','',0)
   }
 }

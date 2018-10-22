@@ -4,10 +4,10 @@ import { Show } from '../models/show'
 
 @Component({
   selector: 'app-show-form',
-  templateUrl: './register-form.component.html',
-  styleUrls: ['./register-form.component.scss']
+  templateUrl: './add-show.component.html',
+  styleUrls: ['./add-show.component.scss']
 })
-export class RegisterFormComponent {
+export class AddShowComponent {
 
   model = new Show("","",null,"")
   
