@@ -1,31 +1,71 @@
-<h1>Products</h1>
+<div class="container">
+  <div [hidden]="submitted">
+    <form (ngSubmit)="onSubmit()" #showForm="ngForm">
 
-<div class="row">
-  <div class="col-md-4">
-    <mdb-card>
-      <!--Card image-->
-      <mdb-card-img src="https://www.nbc.com/sites/nbcunbc/files/files/images/2016/1/19/MDot-TheOffice-640x360-MP.jpg"
-        alt="Card image cap"></mdb-card-img>
-      <!--Card content-->
-      <mdb-card-body>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name" #name="ngModel">
+        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+          Name is required
+        </div>
+      </div>
 
-        <!--Title-->
-        <mdb-card-title>
-          <h4>The Office</h4>
-        </mdb-card-title>
 
-        <!--Text-->
-        <mdb-card-text> Some quick example text to build on the card title and make up the bulk of the card's content.
-        </mdb-card-text>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" class="form-control" id="description" required=true [(ngModel)]="model.description" name="description"
+          #description="ngModel">
+        <div [hidden]="description.valid || description.pristine" class="alert alert-danger">
+          Description is required
+        </div>
+      </div>
 
-        <button type="button" mdbBtn color="indigo" class="waves-light" mdbPopover="IDK" placement="top"
-          mdbPopoverHeader="The Office" block="true" size="sm" triggers="focus" mdbWavesEffect>More Details
-        </button>
-        <button mdbBtn color="yellow" class="waves-light" block="true" mdbWavesEffect>
-          <mdb-icon icon="cart-plus"></mdb-icon>
-        </button>
-      </mdb-card-body>
-    </mdb-card>
+
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input type="number" class="form-control" id="price" required [(ngModel)]="model.price" name="price" #price="ngModel">
+        <div [hidden]="price.valid || price.pristine" class="alert alert-danger">
+          Price is required
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="genre">Genre</label>
+        <input type="text" class="form-control" id="genre" required [(ngModel)]="model.genre" name="genre" #genre="ngModel">
+        <div [hidden]="genre.valid || genre.pristine" class="alert alert-danger">
+          Genre is required
+        </div>
+      </div>
+
+
+      <button type="submit" class="btn btn-success" [disabled]="!showForm.form.valid">Submit</button>
+      <button type="button" class="btn btn-success" (click)="convertShow()">Convert</button>
+      <button type="button" class="btn btn-default" (click)="newShow(); showForm.reset()">New Show</button>
+      <button type="button" class="btn btn-default" (click)="getShows();">Get Shows</button>
+    </form>
   </div>
 
+  <div [hidden]="!submitted">
+    <h2>You submitted the following:</h2>
+    <div class="row">
+      <div class="col-xs-3">Name</div>
+      <div class="col-xs-9  pull-left">{{ model.name }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Description</div>
+      <div class="col-xs-9 pull-left">{{ model.description }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Price</div>
+      <div class="col-xs-9 pull-left">{{ model.price }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Genre</div>
+      <div class="col-xs-9 pull-left">{{ model.genre }}</div>
+    </div>
+    <br>
+    <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+
+  </div>
 </div>

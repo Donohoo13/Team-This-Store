@@ -1,0 +1,32 @@
+<h1>Products</h1>
+
+<div class="row">
+  <div class="col-md-4">
+    <mdb-card>
+
+      <mdb-card-img src="https://www.nbc.com/sites/nbcunbc/files/files/images/2016/1/19/MDot-TheOffice-640x360-MP.jpg"
+        alt="Card image cap"></mdb-card-img>
+
+        <button id="edit" type="button" color="grey" class="waves-light" size="sm" (click)="updateShow()">
+            <mdb-icon icon="edit"></mdb-icon>
+          </button>
+
+      <mdb-card-body>
+
+        <mdb-card-title>
+          <h4>The Office</h4>
+        </mdb-card-title>
+
+        <mdb-card-text> Some quick example text to build on the card title and make up the bulk of the card's content.
+        </mdb-card-text>
+
+        <button type="button" mdbBtn color="indigo" class="waves-light" mdbPopover="IDK" placement="top"
+          mdbPopoverHeader="The Office" block="true" size="sm" triggers="focus" mdbWavesEffect>More Details
+        </button>
+        <button mdbBtn color="yellow" class="waves-light" block="true" (click)="addToCart()" mdbWavesEffect>
+          <mdb-icon icon="cart-plus"></mdb-icon>
+        </button>
+      </mdb-card-body>
+    </mdb-card>
+  </div>
+</div>
