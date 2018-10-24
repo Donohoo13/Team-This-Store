@@ -1,4 +1,4 @@
-<!-- <div class="container">
+<div class="container">
   <div [hidden]="submitted">
     <form (ngSubmit)="onSubmit()" #showForm="ngForm">
 
@@ -39,10 +39,8 @@
       </div>
 
 
-      <button type="submit" class="btn btn-success" [disabled]="!showForm.form.valid">Submit</button>
-      <button type="button" class="btn btn-success" (click)="convertShow()">Convert</button>
-      <button type="button" class="btn btn-default" (click)="newShow(); showForm.reset()">New Show</button>
-      <button type="button" class="btn btn-default" (click)="getShows();">Get Shows</button>
+      <button type="submit" class="btn btn-success" [disabled]="!showForm.form.valid">Submit New</button>
+      <button type="button" class="btn btn-default" (click)="newShow(); showForm.reset()">Reset Form</button>
     </form>
   </div>
 
@@ -65,10 +63,10 @@
       <div class="col-xs-9 pull-left">{{ model.genre }}</div>
     </div>
     <br>
-    <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+    <button class="btn btn-primary" routerLink="/productCard">Back to Products</button>
 
   </div>
-</div> -->
+</div>
 
 <!-- <div *ngfor="let post of posts">{{productsCards}}</div> -->
 
