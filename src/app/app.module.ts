@@ -47,6 +47,7 @@ import { ProductCardComponent } from './product-card/product-card.component';
       { path: 'store', component: StoreComponent },
       { path: 'login', component: LoginComponent },
       { path: 'shoppingCart', component: LoginComponent },
+      { path: 'productCard', component: ProductCardComponent },
     ])
   ],
   providers: [AppComponent],

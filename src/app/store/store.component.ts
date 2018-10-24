@@ -34,13 +34,13 @@ export class StoreComponent {
     // console.log(typeof newJsonObject);
   }
 
-  getShows() {
-    fetch("https://hapi-practice-ftjjbqgvls.now.sh/shows")
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(myJson) {
-        console.log(myJson);
-      });
-  }
+  // getShows() {
+  //   fetch("https://hapi-practice-ftjjbqgvls.now.sh/shows")
+  //     .then(function(response) {
+  //       return response.json();
+  //     })
+  //     .then(function(myJson) {
+  //       console.log(myJson);
+  //     });
+  // }
 }
