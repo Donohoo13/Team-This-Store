@@ -1,6 +1,15 @@
 <h1>Products</h1>
 
-<div class="row">
+<!-- <div class="container">
+  <div class="item" *ngFor="let post of posts">
+    <h3 class="title">{{post.name}}</h3>
+    <div class="item-body">
+      {{post.description}}
+    </div>
+  </div>
+</div>  -->
+
+<div class="row" *ngFor="let post of posts">
   <div class="col-md-4">
     <mdb-card>
 
@@ -14,14 +23,15 @@
       <mdb-card-body>
 
         <mdb-card-title>
-          <h4>The Office</h4>
+          <h4>{{post.name}}</h4>
         </mdb-card-title>
+        <hr>
 
-        <mdb-card-text> Some quick example text to build on the card title and make up the bulk of the card's content.
+        <mdb-card-text> {{post.description}}
         </mdb-card-text>
 
-        <button type="button" mdbBtn color="indigo" class="waves-light" mdbPopover="IDK" placement="top"
-          mdbPopoverHeader="The Office" block="true" size="sm" triggers="focus" mdbWavesEffect>More Details
+        <button type="button" mdbBtn color="indigo" class="waves-light" mdbPopover=${{post.price}} placement="top"
+          mdbPopoverHeader="{{post.genre}}" block="true" size="sm" triggers="focus" mdbWavesEffect>More Details
         </button>
         <button mdbBtn color="yellow" class="waves-light" block="true" (click)="addToCart()" mdbWavesEffect>
           <mdb-icon icon="cart-plus"></mdb-icon>

@@ -2,6 +2,7 @@
 import { Component } from "@angular/core";
 import { Show } from "../models/show";
 // import { NullAstVisitor } from '@angular/compiler';
+import { ProductCardComponent } from '../product-card/product-card.component'
 
 @Component({
   selector: 'app-store',
@@ -43,4 +44,5 @@ export class StoreComponent {
   //       console.log(myJson);
   //     });
   // }
+  productsCards = ProductCardComponent
 }
