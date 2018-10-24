@@ -1,30 +1,65 @@
-import { Component, OnInit } from "@angular/core";
-import { User } from "../models/users";
-
+import { Component, OnInit } from '@angular/core';
+import {User} from '../models/users'
+ 
 @Component({
-  selector: "app-user-form",
-  templateUrl: "./register-user.component.html",
-  styleUrls: ["./register-user.component.scss"]
+selector: 'app-user-form',
+templateUrl: '../register-user/register-user.component.html',
+styleUrls: ['../register-user/register-user.component.scss']
 })
 export class RegisterUserComponent {
-  model = new User("", "", "", "", "", "", null);
+ 
+model = new User("","","","","","",0)
+submitted = false;
+ 
+constructor(){ }
 
-  submitted = false;
 
-  onSubmit() {
-    this.submitted = true;
-  }
-
-  newUser() {
-    this.model = new User("", "", "", "", "", "", 0);
-  }
-
-  convertShow(){
-    const test = JSON.stringify(this.model);
-    console.log(test);
-    console.log(typeof(test))
-    const newJsonObject=JSON.parse(test)
-    console.log(newJsonObject);
-    console.log(typeof(newJsonObject))
-  }
+ 
+onSubmit(){ this.submitted = true;
+let theReq = new Request ('https://hapi-practice-uodxjalzjs.now.sh/users', {
+method: "POST", // *GET, POST, PUT, DELETE, etc.
+// mode: "cors", // no-cors, cors, *same-origin
+// cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+// credentials: "same-origin", // include, same-origin, *omit
+headers: {
+"Content-Type": "application/json; charset=utf-8",
+// "Content-Type": "application/x-www-form-urlencoded",
+},
+// redirect: "follow", // manual, *follow, error
+// referrer: "no-referrer", // no-referrer, *client
+body: this.convertUser() // body data type must match "Content-Type" header
+})
+fetch(theReq)
+.then(response => response.json());
+} // parses response to JSON
+// .then(function(response) {
+// return response.json()
+// }).then(function(myJson) {
+// console.log(myJson);
+// });
+ 
+ 
+// console.log(this.convertShow)
+// return this.convertShow;
+// };
+ngOnInit(){
+}
+newUser(){
+this.model = new User('','','','','','',0,)
+}
+convertUser(){
+const test = JSON.stringify(this.model);
+console.log(test);
+ 
+const newJsonObject=JSON.parse(test)
+console.log(newJsonObject);
+return test
+}
+getUsers(){
+fetch('https://hapi-practice-uodxjalzjs.now.sh/users').then(function(response) {
+return response.json()
+}).then(function(myJson) {
+console.log(myJson);
+});
+}
 }
