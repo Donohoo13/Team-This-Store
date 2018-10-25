@@ -7,7 +7,7 @@ templateUrl: '../register-user/register-user.component.html',
 styleUrls: ['../register-user/register-user.component.scss']
 })
 export class RegisterUserComponent {
- 
+ URL = "http://localhost:3000"
 model = new User("","","","","","",0)
 submitted = false;
  
@@ -16,7 +16,7 @@ constructor(){ }
 
  
 onSubmit(){ this.submitted = true;
-let theReq = new Request ('https://hapi-practice-uodxjalzjs.now.sh/users', {
+let theReq = new Request (`${URL}/users`, {
 method: "POST", // *GET, POST, PUT, DELETE, etc.
 // mode: "cors", // no-cors, cors, *same-origin
 // cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
@@ -56,7 +56,7 @@ console.log(newJsonObject);
 return test
 }
 getUsers(){
-fetch('https://hapi-practice-uodxjalzjs.now.sh/users').then(function(response) {
+fetch(`${URL}/users`).then(function(response) {
 return response.json()
 }).then(function(myJson) {
 console.log(myJson);

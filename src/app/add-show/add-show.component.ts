@@ -9,7 +9,7 @@ import { Show } from "../models/show";
 })
 export class AddShowComponent {
   model = new Show("", "", null, "");
-
+  URL="http://localhost:3000"
   submitted = false;
 
   constructor() {}
@@ -34,7 +34,7 @@ export class AddShowComponent {
   }
 
   getShows() {
-    fetch("https://hapi-practice-ftjjbqgvls.now.sh/shows")
+    fetch(`${URL}/shows`)
       .then(function(response) {
         return response.json();
       })

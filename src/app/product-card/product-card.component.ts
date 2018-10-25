@@ -11,8 +11,8 @@ export class ProductCardComponent implements OnInit {
   posts = [""];
   title = "Angular HttpClient";
 
-  Url = "https://hapi-practice-uodxjalzjs.now.sh/shows";
-  Url1 = "https://jsonplaceholder.typicode.com/posts";
+  Url = "http://localhost:3000/shows";
+
 
   // inject FetchdataService service
   constructor(private srv: FetchdataService) {}
