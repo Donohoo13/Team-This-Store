@@ -11,7 +11,7 @@ export class ProductCardComponent implements OnInit {
   posts = [""];
   title = "Angular HttpClient";
 
-  Url = "http://localhost:3000/shows";
+  Url = "https://zeit.co/e0uHCGPpDsNPYpoRjJSw26C6/hapi-practice/uodxjalzjs";
 
 
   // inject FetchdataService service
@@ -20,7 +20,7 @@ export class ProductCardComponent implements OnInit {
   getPosts(): void {
     this.srv
       .getData(this.Url)
-      .subscribe(data => this.posts.push(...data),
+      .subscribe(data => this.posts = data ,
        error => console.log(error));
   }
 
