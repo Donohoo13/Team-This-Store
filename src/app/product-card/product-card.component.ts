@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FetchdataService } from "../fetchdata.service";
+import { Jsonp } from "@angular/http";
 
 @Component({
   selector: "product-card",
@@ -11,7 +12,7 @@ export class ProductCardComponent implements OnInit {
   posts = [""];
   title = "Angular HttpClient";
 
-  Url = "https://zeit.co/e0uHCGPpDsNPYpoRjJSw26C6/hapi-practice/uodxjalzjs";
+  Url = "https://hapi-practice-uodxjalzjs.now.sh/shows";
 
 
   // inject FetchdataService service
