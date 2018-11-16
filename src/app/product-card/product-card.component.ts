@@ -17,10 +17,10 @@ export class ProductCardComponent implements OnInit {
   // inject FetchdataService service
   constructor(private srv: FetchdataService) {}
 
-  getPosts(): void {
+  getPosts(): any {
     this.srv
       .getData(this.Url)
-      .subscribe(data => this.posts = data ,
+      .subscribe(data => this.posts.push(...data),
        error => console.log(error));
   }
 
