@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FetchdataService } from "../fetchdata.service";
-import { Jsonp } from "@angular/http";
+
 
 @Component({
   selector: "product-card",

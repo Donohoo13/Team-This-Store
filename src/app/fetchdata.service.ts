@@ -8,7 +8,7 @@ export class FetchdataService {
   constructor(private http:HttpClient) { }
 
   getData(url:string){
-    return this.http.get(url)
+    return this.http.get<any[]>(url)
   }
 
 }
